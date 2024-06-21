@@ -1,0 +1,25 @@
+{
+  "short_name": "모두의 일과",
+  "name": "장애인 구인구직 플랫폼",
+  "icons": [
+    {
+      "src": "favicon copy.ico",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "mstile-150x150.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "ms-icon-310x310.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}

@@ -1,0 +1,17 @@
+# Ignore .idea directory (for JetBrains IDEs)
+.idea/
+
+# Ignore database files
+modoo.db
+
+# Ignore Python bytecode files
+*.pyc
+
+# Ignore Python cache directories
+__pycache__/
+
+# Ignore database migration directories
+migrations/
+
+# Ignore Alembic configuration file
+alembic.ini
