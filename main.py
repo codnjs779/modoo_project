@@ -16,6 +16,8 @@ from jose import jwt
 from datetime import timedelta, datetime
 from sqlalchemy import or_
 
+from starlette.responses import FileResponse
+from starlette.staticfiles import StaticFiles
 
 load_dotenv()
 app = FastAPI()
@@ -37,7 +39,7 @@ app.add_middleware(
 scheduler = BackgroundScheduler()
 
 # 매일 00:00에 fetchdata 엔드포인트 호출하는 작업 추가
-scheduler.add_job(lambda: post("http://127.0.0.1:8000/fetchdata"), "cron", hour=00, minute=00)
+scheduler.add_job(lambda: post("http://3.38.20.184:8000/fetchdata"), "cron", hour=00, minute=00)
 
 # # 스케줄러 시작
 scheduler.start()
@@ -166,3 +168,9 @@ if __name__ == "__main__":
     import uvicorn
 
     uvicorn.run(app, host="0.0.0.0", port=8000)
+
+
+app.mount("/static", StaticFiles(directory="frontend/build/static"))
+@app.get("/")
+def index():
+    return FileResponse("frontend/build/static/index.html")
