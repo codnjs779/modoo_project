@@ -170,7 +170,7 @@ if __name__ == "__main__":
     uvicorn.run(app, host="0.0.0.0", port=8000)
 
 
-app.mount("/static", StaticFiles(directory="frontend/build/static"))
+app.mount("build/static", StaticFiles(directory="frontend/build/static"))
 @app.get("/")
 def index():
-    return FileResponse("frontend/build/static/index.html")
+    return FileResponse("frontend/build/index.html")
